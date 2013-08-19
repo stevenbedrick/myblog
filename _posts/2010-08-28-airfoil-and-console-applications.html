@@ -1,0 +1,12 @@
+--- 
+layout: post
+title: Airfoil and Console Applications
+tags: []
+
+status: publish
+type: post
+published: true
+meta: {}
+
+---
+<p>File this one under &ldquo;Obvious solutions that I somehow hadn&rsquo;t figured out until just now.&rdquo; I&rsquo;m a heavy user of the excellent <a href="http://6xq.net/html/00/17.html">Pianobar</a> command-line Pandora client, and in the past have often wanted to stream its audio to my Airport Express using <a href="http://www.rogueamoeba.com/airfoil/">Airfoil</a>. Until now, I had been unable to do so, as Airfoil&rsquo;s UI for selecting the application from which to stream audio (its &ldquo;choose application&rdquo; dialogue box) only supports OSX &ldquo;application bundle&rdquo;-style executables by default.</p><p>It turns out that there <em>is</em> a way to tell Airfoil to capture audio from console applications (something involving holding down the option key when you click on the source drop-down menu, etc.), but that only solves part of the problem: Airfoil can&rsquo;t seem to capture the audio from a running Pianobar process, and so you have to let it launch a new process&hellip; at which point you&rsquo;re stuck. Since pianobar is a console application, launching it via Airfoil won&rsquo;t give you any way to interact with it (e.g., to select which station to play, etc.).</p><p>There are two solutions. The first is to use Pianobar&rsquo;s config file to set up an <code>autostart_station</code> (clunky, but workable). The other is so obvious that I&rsquo;m more than a little embarrassed that it took me so long to hit upon it: just tell Airfoil to capture the audio output from Terminal.app. Problem solved.</p>
